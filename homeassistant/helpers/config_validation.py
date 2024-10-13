@@ -183,8 +183,8 @@ CONFIGURATION_URL_PROTOCOL_SCHEMA_LIST = frozenset(
 # Home Assistant types
 byte = vol.All(vol.Coerce(int), vol.Range(min=0, max=255))
 small_float = vol.All(vol.Coerce(float), vol.Range(min=0, max=1))
-positive_int = vol.All(vol.Coerce(int), vol.Range(min=0))
-positive_float = vol.All(vol.Coerce(float), vol.Range(min=0))
+positive_int = vol.All(vol.Coerce(int), vol.Range(min=0, min_included=False))
+positive_float = vol.All(vol.Coerce(float), vol.Range(min=0, min_included=False))
 latitude = vol.All(
     vol.Coerce(float), vol.Range(min=-90, max=90), msg="invalid latitude"
 )
