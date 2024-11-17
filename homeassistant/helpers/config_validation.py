@@ -73,6 +73,7 @@ from homeassistant.const import (
     CONF_SEQUENCE,
     CONF_SERVICE,
     CONF_SERVICE_DATA,
+    CONF_SERVICE_DATA_RAW,
     CONF_SERVICE_DATA_TEMPLATE,
     CONF_SERVICE_TEMPLATE,
     CONF_SET_CONVERSATION_RESPONSE,
@@ -1467,6 +1468,7 @@ SERVICE_SCHEMA = vol.All(
             vol.Optional(CONF_SERVICE_DATA_TEMPLATE): vol.Any(
                 template, vol.All(dict, template_complex)
             ),
+            vol.Optional(CONF_SERVICE_DATA_RAW): dict,
             vol.Optional(CONF_ENTITY_ID): comp_entity_ids,
             vol.Optional(CONF_TARGET): vol.Any(TARGET_SERVICE_FIELDS, dynamic_template),
             vol.Optional(CONF_RESPONSE_VARIABLE): str,

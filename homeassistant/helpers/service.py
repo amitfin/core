@@ -23,6 +23,7 @@ from homeassistant.const import (
     CONF_ACTION,
     CONF_ENTITY_ID,
     CONF_SERVICE_DATA,
+    CONF_SERVICE_DATA_RAW,
     CONF_SERVICE_DATA_TEMPLATE,
     CONF_SERVICE_TEMPLATE,
     CONF_TARGET,
@@ -419,6 +420,8 @@ def async_prepare_call_from_config(
             service_data.update(render)
         except TemplateError as ex:
             raise HomeAssistantError(f"Error rendering data template: {ex}") from ex
+
+    service_data.update(conf.get(CONF_SERVICE_DATA_RAW, {}))
 
     if CONF_SERVICE_ENTITY_ID in config:
         if target:

@@ -56,6 +56,7 @@ from homeassistant.const import (
     CONF_SEQUENCE,
     CONF_SERVICE,
     CONF_SERVICE_DATA,
+    CONF_SERVICE_DATA_RAW,
     CONF_SERVICE_DATA_TEMPLATE,
     CONF_SET_CONVERSATION_RESPONSE,
     CONF_STOP,
@@ -1565,6 +1566,7 @@ class Script:
                     step.get(CONF_TARGET),
                     step.get(CONF_SERVICE_DATA),
                     step.get(CONF_SERVICE_DATA_TEMPLATE),
+                    step.get(CONF_SERVICE_DATA_RAW),
                 ):
                     _referenced_extract_ids(data, target, referenced)
 
@@ -1608,6 +1610,7 @@ class Script:
                     step.get(CONF_TARGET),
                     step.get(CONF_SERVICE_DATA),
                     step.get(CONF_SERVICE_DATA_TEMPLATE),
+                    step.get(CONF_SERVICE_DATA_RAW),
                 ):
                     _referenced_extract_ids(data, ATTR_DEVICE_ID, referenced)
 
@@ -1656,6 +1659,7 @@ class Script:
                     step.get(CONF_TARGET),
                     step.get(CONF_SERVICE_DATA),
                     step.get(CONF_SERVICE_DATA_TEMPLATE),
+                    step.get(CONF_SERVICE_DATA_RAW),
                 ):
                     _referenced_extract_ids(data, ATTR_ENTITY_ID, referenced)
 
